@@ -4,6 +4,7 @@ cd /home/radhika/atac\
 ####Mappability folder design####\
 #Creating Bowtie index\
 # 3 minutes\
+##umap python 2.7##
 /home/radhika/bowtie-1.3.0-linux-x86_64/bowtie-build Dalb/genome/genome.fa Dalb/genome/Umap_bowtie.ind\
 
 #Creating kmer 24, number of lanes in "chrsize_index.tsv" file created by bowtie build, seq number,172#\
