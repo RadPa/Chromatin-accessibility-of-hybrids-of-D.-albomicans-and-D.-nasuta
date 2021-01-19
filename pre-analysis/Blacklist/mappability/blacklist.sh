@@ -65,3 +65,6 @@ for i in NC_047627.1 NC_047628.1 NC_047629.1 NC_047630.1 NC_047631.1 NW_02299573
 do\
 ../Blacklist "$i" > "$i".bed\
 done\
+
+#Concatenating bed for Blacklisting the region of geome\
+cat cat NC_047627.1.bed NC_047628.1.bed NC_047629.1.bed NC_047630.1.bed NC_047631.1.bed NW_022995738.1.bed NW_022995739.1.bed NW_022995740.1.bed NW_022995741.1.bed NW_022995742.1.bed > Blacklist.bed
