@@ -1,5 +1,6 @@
 ##!/bin/bash
 cd /home/radhika/atac\
+#Workstation Z840\
 ######Blacklisting######\
 ####Mappability folder design####\
 #Creating Bowtie index\
