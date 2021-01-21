@@ -8,3 +8,6 @@ echo "$i"\
 echo "$i" done\
 
 done
+
+#Multiqc uses python3.7 \
+multiqc -s -f -m fastqc -m cutadapt -i post-trim post-trim_reads/ \
