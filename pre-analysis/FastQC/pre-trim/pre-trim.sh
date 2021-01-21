@@ -9,3 +9,6 @@ echo "$i"\
 echo "$i" done\
 
 done
+
+#Multiqc uses python3.7\
+multiqc -s -i pre-trim pre-trim_reads/\
