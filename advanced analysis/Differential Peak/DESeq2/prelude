@@ -1,0 +1,11 @@
+#After peak calling  
+
+#READYing FOR DIFFERENTIAL ACCESSIBILITY ACROSS TWO SPECIES 
+
+ 
+
+cat AAT1.q2_0_peaks.gappedPeak AAT2.q2_0_peaks.gappedPeak ANT1.q2_6_peaks.gappedPeak ANT2.q2_0_peaks.gappedPeak | awk -v OFS="\t" '$13>=10 {print}' | cut -f 1,7-8 |sort -k1,1 -k2,2n |/home/radhika/bedtools2/bin/bedtools merge -i stdin > tes.nfr.bed 
+
+ 
+
+/home/radhika/bedtools2/bin/bedtools multicov -D -bams AAT1.filtered.bam AAT2.filtered.bam ANT1.filtered.bam ANT2.filtered.bam -bed tes.q2.f1.nfr.mbed > tes.nfr.count 
