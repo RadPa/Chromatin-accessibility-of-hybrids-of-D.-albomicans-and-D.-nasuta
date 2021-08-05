@@ -1,3 +1,7 @@
+#From the res of DESeq2 to bedtools intersect
+/home/radhika/bedtools2/bin/bedtools intersect -a /home/radhika/atac/tff/GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.agat.sort.gff -b nfr.tes.des.bed > nfr.tes.des.int.bed
+
+#For our need
 awk '$3=="gene" {print $1,$4,$5,$9}' nfr.tes.des.int.bed|awk -F ';' '{print $1}'|sed 's/ID=gene-//'|awk -v OFS="\t" '{print $4,$1,$2,$3}'>nfr.tes.des.g.bed 
 
 awk 'NR==FNR {end[$4]; next} ($3 in end)' nfr.tes.des.g.bed nfr.tes.des.txt > nfr.tes.des.go.txt 
