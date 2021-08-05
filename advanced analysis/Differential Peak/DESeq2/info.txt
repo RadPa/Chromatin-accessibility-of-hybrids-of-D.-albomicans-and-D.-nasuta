@@ -1,0 +1,5 @@
+Samples	Species	Tissue
+AAT1	Dalbomicans	Testes
+AAT2	Dalbomicans	Testes
+ANT1	Dnasuta	Testes
+ANT2	Dnasuta	Testes
