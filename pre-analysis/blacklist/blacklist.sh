@@ -63,8 +63,10 @@ for i in `seq 1 10`\
 do\
 python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/combine_umaps.py /home/radhika/atac/blist/kmers /home/radhika/atac/blist/chrsize.tsv -job_id "$i"\
 done\
+#This will create the mappability folder
 
 ####Calling Blacklist regions of the genome####
+#With the mappability folder and input files (unfiltered .bam) folder in the same directory
 for i in NC_047627.1 NC_047628.1 NC_047629.1 NC_047630.1 NC_047631.1 NW_022995738.1 NW_022995739.1 NW_022995740.1 NW_022995741.1 NW_022995742.1\    
 do\
 ../Blacklist "$i" > "$i".bed\
