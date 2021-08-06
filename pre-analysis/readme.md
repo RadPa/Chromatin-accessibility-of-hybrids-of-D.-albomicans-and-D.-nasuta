@@ -18,5 +18,5 @@ Log files of FastQC and cutadapt were analyzed using **MultiQC v1.9**
 * Optical duplicates found in alignment was removed using **GATK4 MarkDuplicates v4.1.9.0**
 
 # Blacklist
-Regions in genomes that have anomalous, unstructured, or high signal in NGS experiments and removal of such regions is an essential quality measure when analyzing functional genomics data (Amemiya et al 2019).
-Blacklist was created for the organism of interest using [Boyle-Lab/Blacklist] (http://github.com/Boyle-Lab/Blacklist.git)
+Amemiya et al (2019), stated that there are regions in genomes that have anomalous, unstructured, or high signal in NGS experiments and removal of such regions is an essential quality measure when analyzing functional genomics data.
+Blacklist was created for the organism of interest using [Boyle-Lab/Blacklist] (https://github.com/Boyle-Lab/Blacklist)
