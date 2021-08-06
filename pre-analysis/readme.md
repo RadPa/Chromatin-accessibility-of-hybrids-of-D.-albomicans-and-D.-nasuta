@@ -1,6 +1,6 @@
 # Pre-core analysis Requirements
 
-<img align="right"  src="https://github.com/RadPa/ATAC-seq/blob/main/pre-analysis/checkpresentation.jpg"> 
+<img align="right"  src="https://github.com/RadPa/ATAC-seq/blob/main/pre-analysis/flowChart.png"> 
 
 # Quality checks
 ### FastQC
