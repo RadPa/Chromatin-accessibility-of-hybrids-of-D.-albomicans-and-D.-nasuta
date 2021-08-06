@@ -17,9 +17,7 @@ echo mapping "$k"\
 ##Mapping and format conversions##\
 
 /home/radhika/bowtie2-2.4.2-sra-linux-x86_64/bowtie2 -p 32 --very-sensitive -X 1000 --seed 21 -x GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.fna -1 "$i" -2 "$j" | /home/radhika/samtools-1.11/samtools view -b -o "$k".bam\
-/home/radhika/samtools-1.11/samtools sort "$k".bam -o "$k".sbam #Don't ever pipe the sort if the .bam files are not made, logical\
-
-#/home/radhika/samtools-1.11/samtools view -b "$k".sam |/home/radhika/samtools-1.11/samtools sort -o "$k".sbam\
+/home/radhika/samtools-1.11/samtools sort "$k".bam -o "$k".sbam 
 
 echo samtools "$k"\
 ##Statistics## \
