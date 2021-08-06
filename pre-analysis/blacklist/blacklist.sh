@@ -3,10 +3,13 @@ cd /home/radhika/atac\
 #Workstation Z840\
 ######Blacklisting######\
 ####Mappability folder design####\
+python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/ubismap.py /home/radhika/atac/tff/GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.fna /home/radhika/atac/peaks/testes/alb-chr.size /home/radhika/atac/blist alb /home/radhika/bowtie-1.3.0-linux-x86_64/bowtie-build -write_script blist.sh 
+#Creates a blist.sh script, and was modified to work as following
+
 #Creating Bowtie index\
 # 3 minutes\
 ##umap python 2.7##
-/home/radhika/bowtie-1.3.0-linux-x86_64/bowtie-build Dalb/genome/genome.fa Dalb/genome/Umap_bowtie.ind\
+/home/radhika/bowtie-1.3.0-linux-x86_64/bowtie-build /home/radhika/atac/blist/genome/genome.fa /home/radhika/atac/blist/genome/Umap_bowtie.ind\
 
 #Creating kmer 24, number of lanes in "chrsize_index.tsv" file created by bowtie build, seq number,172#\
 #Edit "chrsize_index.tsv" and remove the 0 index start the numbering from 1, first colum\
@@ -16,10 +19,10 @@ for i in `seq 1 172`\
 do \
 
 #get_kmers.py\
-python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/get_kmers.py Dalb/chrsize.tsv Dalb/kmers/k24 Dalb/chrs Dalb/chrsize_index.tsv --job_id "$i" --kmer k24\
-python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/get_kmers.py Dalb/chrsize.tsv Dalb/kmers/k36 Dalb/chrs Dalb/chrsize_index.tsv --job_id "$i" --kmer k36\
-python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/get_kmers.py Dalb/chrsize.tsv Dalb/kmers/k50 Dalb/chrs Dalb/chrsize_index.tsv --job_id "$i" --kmer k50\
-python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/get_kmers.py Dalb/chrsize.tsv Dalb/kmers/k100 Dalb/chrs Dalb/chrsize_index.tsv --job_id "$i" --kmer k100\
+python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/get_kmers.py /home/radhika/atac/blist/chrsize.tsv /home/radhika/atac/blist/kmers/k24 /home/radhika/atac/blist/chrs /home/radhika/atac/blist/chrsize_index.tsv --job_id "$i" --kmer k24\
+python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/get_kmers.py /home/radhika/atac/blist/chrsize.tsv /home/radhika/atac/blist/kmers/k36 /home/radhika/atac/blist/chrs /home/radhika/atac/blist/chrsize_index.tsv --job_id "$i" --kmer k36\
+python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/get_kmers.py /home/radhika/atac/blist/chrsize.tsv /home/radhika/atac/blist/kmers/k50 /home/radhika/atac/blist/chrs /home/radhika/atac/blist/chrsize_index.tsv --job_id "$i" --kmer k50\
+python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/get_kmers.py /home/radhika/atac/blist/chrsize.tsv /home/radhika/atac/blist/kmers/k100 /home/radhika/atac/blist/chrs /home/radhika/atac/blist/chrsize_index.tsv --job_id "$i" --kmer k100\
 
 done\
 
@@ -28,10 +31,10 @@ for i in `seq 1 171`\
 do\
 
 #run_bowtie.py\
-python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/run_bowtie.py Dalb/kmers/k24 /home/radhika/bowtie-1.3.0-linux-x86_64 Dalb/genome Umap_bowtie.ind -job_id "$i"\
-python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/run_bowtie.py Dalb/kmers/k36 /home/radhika/bowtie-1.3.0-linux-x86_64 Dalb/genome Umap_bowtie.ind -job_id "$i"\
-python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/run_bowtie.py Dalb/kmers/k50 /home/radhika/bowtie-1.3.0-linux-x86_64 Dalb/genome Umap_bowtie.ind -job_id "$i"\
-python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/run_bowtie.py Dalb/kmers/k100 /home/radhika/bowtie-1.3.0-linux-x86_64 Dalb/genome Umap_bowtie.ind -job_id "$i"\
+python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/run_bowtie.py /home/radhika/atac/blist/kmers/k24 /home/radhika/bowtie-1.3.0-linux-x86_64 /home/radhika/atac/blist/genome Umap_bowtie.ind -job_id "$i"\
+python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/run_bowtie.py /home/radhika/atac/blist/kmers/k36 /home/radhika/bowtie-1.3.0-linux-x86_64 /home/radhika/atac/blist/genome Umap_bowtie.ind -job_id "$i"\
+python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/run_bowtie.py /home/radhika/atac/blist/kmers/k50 /home/radhika/bowtie-1.3.0-linux-x86_64 /home/radhika/atac/blist/genome Umap_bowtie.ind -job_id "$i"\
+python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/run_bowtie.py /home/radhika/atac/blist/kmers/k100 /home/radhika/bowtie-1.3.0-linux-x86_64 /home/radhika/atac/blist/genome Umap_bowtie.ind -job_id "$i"\
 done\
 
 #Time required as on 13th of Jan 2021 1m50.077s 2 minutes unify_bowtie.py\
@@ -39,26 +42,26 @@ for i in `seq 1 10`\
 do\
 
 #unify_bowtie.py
-python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/unify_bowtie.py Dalb/kmers/k24 Dalb/chrsize.tsv -job_id "$i"\
-python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/unify_bowtie.py Dalb/kmers/k36 Dalb/chrsize.tsv -job_id "$i"\
-python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/unify_bowtie.py Dalb/kmers/k50 Dalb/chrsize.tsv -job_id "$i"\
-python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/unify_bowtie.py Dalb/kmers/k100 Dalb/chrsize.tsv -job_id "$i"\
+python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/unify_bowtie.py /home/radhika/atac/blist/kmers/k24 /home/radhika/atac/blist/chrsize.tsv -job_id "$i"\
+python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/unify_bowtie.py /home/radhika/atac/blist/kmers/k36 /home/radhika/atac/blist/chrsize.tsv -job_id "$i"\
+python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/unify_bowtie.py /home/radhika/atac/blist/kmers/k50 /home/radhika/atac/blist/chrsize.tsv -job_id "$i"\
+python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/unify_bowtie.py /home/radhika/atac/blist/kmers/k100 /home/radhika/atac/blist/chrsize.tsv -job_id "$i"\
 
 done\
 #Moving the files to TEMPs folder\
-mv Dalb/kmers/k24/*kmer* Dalb/kmers/k24/TEMPs\
-mv Dalb/kmers/k24/*bowtie* Dalb/kmers/k24/TEMPs\
-mv Dalb/kmers/k36/*kmer* Dalb/kmers/k36/TEMPs\
-mv Dalb/kmers/k36/*bowtie* Dalb/kmers/k36/TEMPs\
-mv Dalb/kmers/k50/*kmer* Dalb/kmers/k50/TEMPs\
-mv Dalb/kmers/k50/*bowtie* Dalb/kmers/k50/TEMPs\
-mv Dalb/kmers/k100/*kmer* Dalb/kmers/k100/TEMPs\
-mv Dalb/kmers/k100/*bowtie* Dalb/kmers/k100/TEMPs\
+mv /home/radhika/atac/blist/kmers/k24/*kmer* /home/radhika/atac/blist/kmers/k24/TEMPs\
+mv /home/radhika/atac/blist/kmers/k24/*bowtie* /home/radhika/atac/blist/kmers/k24/TEMPs\
+mv /home/radhika/atac/blist/kmers/k36/*kmer* /home/radhika/atac/blist/kmers/k36/TEMPs\
+mv /home/radhika/atac/blist/kmers/k36/*bowtie* /home/radhika/atac/blist/kmers/k36/TEMPs\
+mv /home/radhika/atac/blist/kmers/k50/*kmer* /home/radhika/atac/blist/kmers/k50/TEMPs\
+mv /home/radhika/atac/blist/kmers/k50/*bowtie* /home/radhika/atac/blist/kmers/k50/TEMPs\
+mv /home/radhika/atac/blist/kmers/k100/*kmer* /home/radhika/atac/blist/kmers/k100/TEMPs\
+mv /home/radhika/atac/blist/kmers/k100/*bowtie* /home/radhika/atac/blist/kmers/k100/TEMPs\
 
 #Unifying all the kmers#
 for i in `seq 1 10`\
 do\
-python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/combine_umaps.py Dalb/kmers Dalb/chrsize.tsv -job_id "$i"\
+python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/umap/combine_umaps.py /home/radhika/atac/blist/kmers /home/radhika/atac/blist/chrsize.tsv -job_id "$i"\
 done\
 
 ####Calling Blacklist regions of the genome####
