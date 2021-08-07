@@ -1,4 +1,7 @@
-## Contents of the folder
+# Quality check for the reads
+
+## Read QC
+
 <img align="right"  src="https://github.com/RadPa/ATAC-seq/blob/main/pre-analysis/FastQC/qc.png"> 
 
 ### adapter 
@@ -12,3 +15,10 @@ After adaptor removal, fastqc and multiqc were performed and the files were uplo
 ### pre-trim
 
 fastqc and multiqc was performed, script and html files were uploaded. 
+
+## ATAC-seq QC
+
+### ATACseqQC
+
+### ataqv
+
