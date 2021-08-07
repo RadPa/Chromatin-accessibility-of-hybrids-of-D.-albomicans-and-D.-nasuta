@@ -4,17 +4,18 @@
 
 <img align="right"  src="https://github.com/RadPa/ATAC-seq/blob/main/pre-analysis/FastQC/qc.png"> 
 
-### adapter 
+### Adapter 
 
 Script for the adaptor removal tool cutadapt.
+
+### pre-trim
+
+fastqc and multiqc was performed, script and html files were uploaded. 
 
 ### post-trim
 
 After adaptor removal, fastqc and multiqc were performed and the files were uploaded.
 
-### pre-trim
-
-fastqc and multiqc was performed, script and html files were uploaded. 
 
 ## ATAC-seq QC
 
