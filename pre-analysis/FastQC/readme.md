@@ -1,4 +1,5 @@
 ## Contents of the folder
+<img align="right"  src="https://github.com/RadPa/ATAC-seq/blob/main/pre-analysis/FastQC/qc.png"> 
 
 ### adapter 
 
