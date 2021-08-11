@@ -12,9 +12,6 @@ The adaptor contamination of the reads were removed using **cutadapt v2.8**
 ### MultiQC
 Log files of FastQC and cutadapt were analyzed using **MultiQC v1.9**
 
-### FRiP scores
-Calculated scores are present in **frip.md**
-
 # Alignment 
 * Adaptor removed reads were aligned using **Bowtie v2.4.2**
 * Post-processing of alignment was done using **SAMtools v1.11**
