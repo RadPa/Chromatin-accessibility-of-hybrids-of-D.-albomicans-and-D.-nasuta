@@ -10,8 +10,7 @@ FastQC v0.11.9 and MultiQC v1.11 with python 3
 The raw reads anlyzed by FastQC, adaptor removal tool, cutadapt used to remove the contamination.
 Aggregation of QC report handled by MultiQC.
 
-### Adapter 
-
+### Adapter Removal
 Cutadapt v2.8 with python 3 was used for the analysis
 
 ## ATAC-seq QC
