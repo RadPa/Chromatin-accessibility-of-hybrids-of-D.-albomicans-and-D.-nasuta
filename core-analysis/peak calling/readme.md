@@ -1,6 +1,6 @@
 # Peak calling
 
-## HMMRATAC vV1.2.10
+## HMMRATAC v1.2.10
 
 ATAC-seq specific peak calling using HMMRATAC (Tarbell and Liu, 2019).
 
