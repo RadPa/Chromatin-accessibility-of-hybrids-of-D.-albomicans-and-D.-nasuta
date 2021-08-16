@@ -27,4 +27,4 @@ ATACseqQC is a Bioconductor R package (R v4.1).
 ### ataqv
 
 ataqv v1.2.1 was used.\
-ataqv needs the peak files also, if TSS enrichment is desired.
+ataqv needs the peak files, if TSS enrichment is desired.
