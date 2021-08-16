@@ -2,7 +2,7 @@
 
 ## Read QC
 
-<img align="right"  src="https://github.com/RadPa/ATAC-seq/blob/main/pre-analysis/FastQC/qc.png"> 
+<img align="right"  src="https://github.com/RadPa/ATAC-seq/blob/main/pre-core%20analysis/qc.png"> 
 
 ### FastQC
 
