@@ -21,8 +21,8 @@ Two of the ATAC-seq specific QC is used
 
 ### ATACseqQC
 
-ATACseqQC is a Bioconductor R packaage, estimate atac-seq library quality through fragment size distribution and many other ATAC-seq specific checks.
+ATACseqQC, a Bioconductor R packaage, estimates the atac-seq library quality through fragment size distribution and many other ATAC-seq specific checks.
 
 ### ataqv
 
-ataqv is a python package, estimate atac-seq library quality through fragment length distribution and many other ATAC-seq specific checks.
+ataqv, a python package, estimates the atac-seq library quality through fragment length distribution and many other ATAC-seq specific checks.
