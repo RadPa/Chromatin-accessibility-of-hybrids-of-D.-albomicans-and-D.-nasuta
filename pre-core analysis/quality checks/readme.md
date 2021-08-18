@@ -25,4 +25,4 @@ ATACseqQC, a Bioconductor R packaage, estimates the atac-seq library quality thr
 
 ### ataqv
 
-ataqv, a python package, estimates the atac-seq library quality through fragment length distribution and many other ATAC-seq specific checks.
+ataqv, a python package, estimates the atac-seq library quality through fragment length distribution and many other ATAC-seq specific checks
