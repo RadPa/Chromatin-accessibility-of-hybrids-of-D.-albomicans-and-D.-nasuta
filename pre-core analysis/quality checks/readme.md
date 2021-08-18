@@ -6,12 +6,11 @@
 
 ### FastQC
 
-FastQC v0.11.9 and MultiQC v1.11 with python 3
 The raw reads anlyzed by FastQC, adaptor removal tool, cutadapt used to remove the contamination.
 Aggregation of QC report handled by MultiQC.
 
 ### Adapter Removal
-Cutadapt v2.8 with python 3 was used for the analysis
+Cutadapt used for adapter removal
 
 ## ATAC-seq QC
 
@@ -22,9 +21,8 @@ Two of the ATAC-seq specific QC is used
 
 ### ATACseqQC
 
-ATACseqQC is a Bioconductor R package (R v4.1). 
+ATACseqQC is a Bioconductor R packaage 
 
 ### ataqv
 
-ataqv v1.2.1 was used.\
-ataqv needs the peak files, if TSS enrichment is desired.
+ataqv is a python package
