@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Fastqc v0.11.9 for raw reads of atac-seq 
-for i in `ls /home/hp1/radhika/atac/rawreads/pre-trim/*.gz` 
+for i in `ls /home/hp1/radhika/atac/rawreads/*.gz` 
 do
 echo "$i"
 /home/hp1/radhika/FastQC/fastqc "$i" 
@@ -23,7 +23,7 @@ echo "$m" done
 done
 
 #FastQC for adapter removed reads
-for i in `ls /home/hp1/radhika/atac/rawreads/pre-trim/*.gz` 
+for i in `ls /home/hp1/radhika/atac/rawreads/*.gz` 
 do
 echo "$i"
 /home/hp1/radhika/FastQC/fastqc "$i" 
@@ -32,4 +32,4 @@ done
 
 #Multiqc v1.11
 source /home/hp1/radhika/py3-env/bin/activate 
-multiqc -s -i rawqc reads
+multiqc -s -i rawqc ../rawreads
