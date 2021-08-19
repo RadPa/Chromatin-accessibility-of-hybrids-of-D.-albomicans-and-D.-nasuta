@@ -12,4 +12,4 @@ The FastQC found adaptor contamination in the raw reads and removed by pyhon3 pa
 An aggregate report generator ```MultiQC v1.11```,pyhon3 package for a consolidated report of FastQC 
 
 ## Contents
-This folder contains the **qc.sh**, **fastqc** and **multiqc reports** of the ATAC-seq data.
+This folder contains the script for the qc analysis **qc.sh**, **fastqc** and **multiqc reports** of the ATAC-seq data.
