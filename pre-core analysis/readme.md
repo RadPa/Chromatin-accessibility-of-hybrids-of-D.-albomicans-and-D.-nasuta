@@ -4,19 +4,18 @@
 
 # Quality checks
 ### FastQC
-The raw reads quality were analyzed using **FastQC v0.11.9**
+The raw reads quality were analyzed using FastQC
 
 ### Adaptor removal
-The adaptor contamination of the reads were removed using **cutadapt v2.8**
+The adaptor contamination of the reads were removed using cutadapt
 
 ### MultiQC
-Log files of FastQC and cutadapt were analyzed using **MultiQC v1.9**
+Log files of FastQC and cutadapt were analyzed using MultiQC
 
 # Alignment 
-* Adaptor removed reads were aligned using **Bowtie v2.4.2**
-* Post-processing of alignment was done using **SAMtools v1.11**
-* Optical duplicates found in alignment was removed using **GATK4 MarkDuplicates v4.1.9.0**
+* Adaptor removed reads were aligned using Bowtie 
+* Post-processing of alignment was done using SAMtools
+* Optical duplicates found in alignment was removed using GATK4 MarkDuplicates
 
 # Blacklist
-Amemiya et al (2019), stated that there are regions in genomes that have anomalous, unstructured, or high signal in NGS experiments and removal of such regions is an essential quality measure when analyzing functional genomics data. 
-Blacklist was created for the organism of interest using Blacklist:https://github.com/Boyle-Lab/Blacklist
+Regions in genomes that have anomalous, unstructured, or high signal in NGS experiments and removal of such regions is an essential quality measure when analyzing functional genomics data (Amemiya et al 2019). 
