@@ -14,7 +14,8 @@ Optical duplicates are marked with `gatk v4.1.9.0 MarkDuplicates`
 ## Removing Mitochondria
 Mitochondrial reads removed with `Samtools v1.11` as per the requirement of the peak callers
 
-## 
+## Fragment length distribution
+Aligned reads distribution with `gatk v4.1.9.0 CollectInsertSizeMetrics`
 
 ### Contents
 
