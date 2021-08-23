@@ -48,5 +48,3 @@ echo picard "$k"
 
 echo "$k" done
 done
-
-done
