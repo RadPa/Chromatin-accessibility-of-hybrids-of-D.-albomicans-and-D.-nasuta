@@ -4,7 +4,7 @@ cd /home/radhika/atac/par
 
 #### Bowtie version 2.4.2 ####
 ##  Genome indexing ##
-#/home/radhika/bowtie2-2.4.2-sra-linux-x86_64/bowtie2-build --threads 16 -f GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.fna 
+ 
 #30.64hrs on 10.01.21
 for i in `ls *_1.fastq.gz`
 do 
@@ -17,7 +17,9 @@ FA=/home/radhika/atac/info-g/GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.fn
 
 echo mapping "$k"
 ##Mapping and format conversions##
-
+#Indexing#
+/home/radhika/bowtie2-2.4.2-sra-linux-x86_64/bowtie2-build --threads 16 -f $FA
+#Mapping#
 /home/radhika/bowtie2-2.4.2-sra-linux-x86_64/bowtie2 -p 32 --very-sensitive -X 1000 --seed 21 -x $FA -1 "$i" -2 "$j" | /home/radhika/samtools-1.11/samtools view -b -o "$k".bam
 /home/radhika/samtools-1.11/samtools sort "$k".bam -o "$k".sbam 
 
