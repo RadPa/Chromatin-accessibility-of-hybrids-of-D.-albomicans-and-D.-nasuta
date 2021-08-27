@@ -4,7 +4,7 @@
 
 The filtered.bam  and the blacklist of the genome were used to the peaks and HMMRATAC is the chosen peak caller. 
 
-## Differential peaks
+## Differential access
 
 The selected peaks from HMMRATAC were used in the differential peak analysis.
 
