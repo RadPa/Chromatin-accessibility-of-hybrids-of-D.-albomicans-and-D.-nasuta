@@ -45,6 +45,7 @@ done
 
 for i in `ls ANT*.shifted.bam`
 do 
+j=`echo "$i" |sed 's/\.filtered.bam//'`
 echo nasuta now
 java -jar /home/radhika/HMMRATAC_V1.2.10_exe.jar -b "$i" -i "$i".bai -g $ALB -e $BLN -q 20 --bedgraph true --bgscore true -o "$j"_0
 
