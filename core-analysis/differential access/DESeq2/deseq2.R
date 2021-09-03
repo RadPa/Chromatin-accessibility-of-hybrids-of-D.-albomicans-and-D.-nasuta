@@ -26,6 +26,16 @@ counts <- at[,4:ncol(at)]
 dds <- DESeqDataSetFromMatrix(countData = counts[,order(colnames(counts))], colData = fo, design = ~ Species)
 dds <- DESeq(dds)
 
+# Annotating peak regions
+library(GenomicFeatures)
+library(ChIPseeker)
+txdb_alb <- loadDb("/home/radhika/atac/info-g/txdb_alb.sqlite")
+gr <- makeGRangesFromDataFrame(at, keep.extra.columns=T)
+peakAnno <- annotatePeak(gr, tssRegion=c(-1000, 1000), TxDb=txdb_alb)
+png("peakanno.png")
+plotAnnoPie(peakAnno)
+dev.off()
+
 #Differential Peak calling
 dds <- DESeq(dds)
 res <- results(dds, lfcThreshold=0, contrast=c("Species", "Dalbomicans", "Dnasuta"))
