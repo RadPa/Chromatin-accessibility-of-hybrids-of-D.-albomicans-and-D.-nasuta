@@ -2,7 +2,7 @@
 
 ## Peak calling
 
-The filtered.bam  and the blacklist of the genome were used to the peaks and HMMRATAC is the chosen peak caller. 
+The mitochondrial reads filtered from `shifted.bam` obtained ATACseQC and the `blacklist` of genome (*D. albomicans* and *D. nasuta*) were used to call peaks from HMMRATAC.
 
 ## Differential access
 
