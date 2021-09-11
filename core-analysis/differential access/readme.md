@@ -12,8 +12,8 @@ edgeR is a method for differential analysis with replication, depending on the r
 ### Requirments
 1. Raw count files
 ```
-cat AAT1.gappedPeak AAT2.gappedPeak ANT1.gappedPeak ANT2.gappedPeak | awk -v OFS="\t" '$13>=10 {print $1,$7,$8}' | sort -k1,1 -k2,2n |/home/radhika/bedtools2/bin/bedtools merge -i stdin > tes.nfrm.bed 
-/home/radhika/bedtools2/bin/bedtools multicov -D -bams AAT1.filtered.bam AAT2.filtered.bam ANT1.filtered.bam ANT2.filtered.bam -bed tes.q2.f1.nfr.mbed > tes.nfr.count 
+cat aat1.gappedPeak aat2.gappedPeak ant1.gappedPeak ant2.gappedPeak | awk -v OFS="\t" '$13>=10 {print $1,$7,$8}' | sort -k1,1 -k2,2n |/home/radhika/bedtools2/bin/bedtools merge -i stdin > tes.sh.nfr.mbed
+/home/radhika/bedtools2/bin/bedtools multicov -D -bams aat1.shm.bam aat2.shm.bam ant1.shm.bam ant2.shm.bam -bed tes.sh.nfr.mbed > tes.sh.nfr.count
 ```
 2. Metadata file `info.txt`
 
