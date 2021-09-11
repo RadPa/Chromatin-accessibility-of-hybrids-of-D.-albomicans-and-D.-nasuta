@@ -29,7 +29,7 @@ ataqv, a python package, estimates the atac-seq library quality through fragment
 
 ## FRiP score
 
-FRiP score defined as the fraction of reads that fall into a peak, `samtools view` used for the mapped reads numbers and reads mapped to the peak regions found by following command
+FRiP score defined as the fraction of reads that fall into a peak, `samtools view -c` used for the mapped reads numbers and reads mapped to the peak regions found by following command
 
 ```
 /home/radhika/bedtools2/bin/bedtools sort -i peakfile |/home/radhika/bedtools2/bin/bedtools merge -i stdin |/home/radhika/bedtools2/bin/bedtools intersect -u -nonamecheck -a shifted.bam -b stdin -ubam |/home/radhika/samtools-1.11/samtools view -c
