@@ -1,7 +1,7 @@
 # Differential accessibility 
 The differential accessibility across two species carried out using two R packages
-1. DESeq2
-2. edgeR
+- DESeq2
+- edgeR
 
 ## DESeq2
 DESeq2 is a method for differential analysis with replicates, depending on the raw count of `.bam` reads based on a model using the negative binomial distribution. The package is available at **Bioconductor**.
@@ -16,3 +16,8 @@ cat AAT1.gappedPeak AAT2.gappedPeak ANT1.gappedPeak ANT2.gappedPeak | awk -v OFS
 /home/radhika/bedtools2/bin/bedtools multicov -D -bams AAT1.filtered.bam AAT2.filtered.bam ANT1.filtered.bam ANT2.filtered.bam -bed tes.q2.f1.nfr.mbed > tes.nfr.count 
 ```
 2. Metadata file `info.txt`
+
+### Contents
+1. Raw count files
+2. Metadata
+3. Folders of DESeq2 and edgeR
