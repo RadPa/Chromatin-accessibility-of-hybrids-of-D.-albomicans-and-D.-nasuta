@@ -1,13 +1,12 @@
 ## ataqv
 `ataqv v1.2.1` a computational toolkit for efficiently measuring, visualizing, and comparing quality control (QC) results across samples and experiments, 
 
-### Requirement for the analysis
+### Requirements for the analysis
 
-ataqv requires few of the files inorder to analyse the data
 1. genome size
-2. aligned reads
+2. shifted bams
 3. peak files
-4. TSS files if you need the TSS enrichment scores
+4. TSS files for TSS enrichment scores
 
 ### Contents
 1. genome size in **.bed** format
