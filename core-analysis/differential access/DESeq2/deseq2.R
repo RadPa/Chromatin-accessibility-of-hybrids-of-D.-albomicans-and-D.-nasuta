@@ -5,8 +5,8 @@ library(reshape2)
 library(pander)
 
 #Importing count data
-at <- read.table("/home/radhika/atac/dacc/tes.nfr.counts", header=F)
-fo <- read.table("/home/radhika/atac/dacc/info.txt", header=T)
+at <- read.table("/home/radhika/atac/dacc/testes/shift/tes.sh.nfr.count", header=F)
+fo <- read.table("/home/radhika/atac/dacc/testes/shift/info.txt", header=T)
 colnames(at) <- c("Chr", "Start", "End", "AAT1", "AAT2","ANT1", "ANT2") #The sample names should be same between at and fo
 rownames(at) <- paste0(at$Chr, "/t", at$Start, "/t", at$End)
 rownames(fo) <- fo$Samples
