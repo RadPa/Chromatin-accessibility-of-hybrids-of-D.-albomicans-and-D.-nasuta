@@ -89,6 +89,10 @@ jpeg("maPlot.jpeg")
 plotMA(res, ylim = c(-5, 5))
 dev.off()
 
+#Load libraries
+library(apeglm)
+library(ashr)
+
 resLFC <- lfcShrink(dds, coef="Species_Dalbomicans_vs_Dnasuta", type="apeglm") #coef=2
 resNorm <- lfcShrink(dds, coef=2, type="normal")
 resAsh <- lfcShrink(dds, coef=2, type="ashr")
