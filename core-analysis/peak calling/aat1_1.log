@@ -1,0 +1,62 @@
+Version:	1.2.10
+Arguments Used:
+-b	aat1.shm.bam
+-i	aat1.shm.bam.bai
+-g	/home/radhika/atac/info-g/chr.size
+-e	/home/radhika/atac/info-g/Dalb-at.v1.blacklist.bed
+-u	30
+-l	10
+-q	20
+--bedgraph	true
+--bedgraph	true
+--bgscore	true
+-o	aat1_1
+Fragment Expectation Maximum Done
+Mean	50.0	StdDevs	20.0
+Mean	260.61177963903276	StdDevs	77.09645248699046
+Mean	460.29909959217446	StdDevs	34.05114895674997
+Mean	631.6220842614398	StdDevs	87.6033870673806
+ScalingFactor	122.942256
+Training Regions found and Zscore regions for exclusion found
+Training Fragment Pileup completed
+Kmeans Model:
+HMM with 3 state(s)
+
+State 0
+  Pi: 0.3333333333333333
+  Aij: 0.333 0.333 0.333
+  Opdf: Multi-variate Gaussian distribution --- Mean: [ 0.058 0.042 0.028 0.043 ]
+
+State 1
+  Pi: 0.3333333333333333
+  Aij: 0.333 0.333 0.333
+  Opdf: Multi-variate Gaussian distribution --- Mean: [ 0.24 0.664 0.404 0.378 ]
+
+State 2
+  Pi: 0.3333333333333333
+  Aij: 0.333 0.333 0.333
+  Opdf: Multi-variate Gaussian distribution --- Mean: [ 0.641 1.955 1.267 1.177 ]
+
+Model created and refined. See aat1_1.model
+Model:
+HMM with 3 state(s)
+
+State 0
+  Pi: 0.3333333333333333
+  Aij: 0.988 0.01 0.001
+  Opdf: Multi-variate Gaussian distribution --- Mean: [ 0.037 0 0 0 ]
+
+State 1
+  Pi: 0.3333333333333333
+  Aij: 0.012 0.98 0.008
+  Opdf: Multi-variate Gaussian distribution --- Mean: [ 0.116 0.351 0.219 0.218 ]
+
+State 2
+  Pi: 0.3333333333333333
+  Aij: 0.005 0.025 0.97
+  Opdf: Multi-variate Gaussian distribution --- Mean: [ 0.399 0.751 0.469 0.489 ]
+
+Genome split and subtracted masked regions
+0 round viterbi done
+19 round viterbi done
+Total time (seconds)= 	6633
