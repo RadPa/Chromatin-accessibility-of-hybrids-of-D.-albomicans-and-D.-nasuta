@@ -5,15 +5,19 @@
 #cut -f 1-2 GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.fna.fai > alb-chr.size
 #To remove mito from .bam#/home/radhika/samtools-1.11/samtools idxstats AAT1_ctad.sdup.bam| cut -f 1 | grep -v AC_027937 | xargs /home/radhika/samtools-1.11/samtools view -b AAT1_ctad.sdup.bam > AAT1.filtered.bam#
 
-for i in `ls AAT*.filtered.bam `
+#!/bin/bash
+#92 hrs in Z840#
+#Mitochondrial reads removed shifted bam#
+for i in `ls aat*.shm.bam `
 do
 
-j=`echo "$i" |sed 's/\.filtered.bam//'`
+j=`echo "$i" |sed 's/\.shm.bam//'`
 BLA=/home/radhika/atac/info-g/Dalb-at.v1.blacklist.bed
 BLN=/home/radhika/atac/info-g/Dnas-at-dalb.v1.blacklist.bed
 ALB=/home/radhika/atac/info-g/chr.size
 
-echo albomicans started
+echo albomicans
+echo "$j" started
 
 java -jar /home/radhika/HMMRATAC_V1.2.10_exe.jar -b "$i" -i "$i".bai -g "$ALB" -e $BLA -q 20 --bedgraph true --bgscore true -o "$j"_0
 
@@ -40,13 +44,16 @@ java -jar /home/radhika/HMMRATAC_V1.2.10_exe.jar -b "$i" -i "$i".bai -g $ALB -e 
 java -jar /home/radhika/HMMRATAC_V1.2.10_exe.jar -b "$i" -i "$i".bai -g $ALB -e $BLA -u 60 -l 15 -q 20 --bedgraph true --bedgraph true --bgscore true -o "$j"_11 
 
 java -jar /home/radhika/HMMRATAC_V1.2.10_exe.jar -b "$i" -i "$i".bai -g $ALB -e $BLA -u 60 -l 20 -q 20 --bedgraph true --bedgraph true --bgscore true -o "$j"_12
-echo albomicans done
+echo "$j" done
 done
 
-for i in `ls ANT*.shifted.bam`
+for i in `ls ant*.shm.bam`
 do 
-j=`echo "$i" |sed 's/\.filtered.bam//'`
+
+j=`echo "$i" |sed 's/\.shm.bam//'`
+
 echo nasuta now
+echo "$j" started
 java -jar /home/radhika/HMMRATAC_V1.2.10_exe.jar -b "$i" -i "$i".bai -g $ALB -e $BLN -q 20 --bedgraph true --bgscore true -o "$j"_0
 
 java -jar /home/radhika/HMMRATAC_V1.2.10_exe.jar -b "$i" -i "$i".bai -g $ALB -e $BLN -u 30 -l 10 -q 20 --bedgraph true --bedgraph true --bgscore true -o "$j"_1 
@@ -72,5 +79,5 @@ java -jar /home/radhika/HMMRATAC_V1.2.10_exe.jar -b "$i" -i "$i".bai -g $ALB -e 
 java -jar /home/radhika/HMMRATAC_V1.2.10_exe.jar -b "$i" -i "$i".bai -g $ALB -e $BLN -u 60 -l 15 -q 20 --bedgraph true --bedgraph true --bgscore true -o "$j"_11 
 
 java -jar /home/radhika/HMMRATAC_V1.2.10_exe.jar -b "$i" -i "$i".bai -g $ALB -e $BLN -u 60 -l 20 -q 20 --bedgraph true --bedgraph true --bgscore true -o "$j"_12
-echo done
+echo "$j" done
 done
