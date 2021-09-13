@@ -41,3 +41,10 @@ FRiP score defined as the fraction of reads that fall into a peak, `samtools vie
 |aat2|141861768|42695972|0.3|
 |ant1|99356268|45042293|0.45|
 |ant2|120777062|75125788|0.62|
+
+## Required files
+The annotation files were enhanced and sorted `AGAT` using `gff3sort` respectively.
+```
+agat_convert_sp_gxf2gxf.pl -g atac/data/GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.gff -o atac/data/GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.agat.gff 
+gff3sort.pl GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.agat.gff > GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.agat.sort.gff  
+```
