@@ -1,6 +1,0 @@
-chr	start	end
-chrX	1	33427555
-chr2L	1	30772581
-chr3	1	55557198
-chr4	1	3955117
-chr2R	1	32236572
