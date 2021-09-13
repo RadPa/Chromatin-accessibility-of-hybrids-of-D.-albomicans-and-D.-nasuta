@@ -1,0 +1,17 @@
+Package: BSgenome.Dalbomicans.dalbv1
+Title: Full genome sequence for Drosophila albomicans (drosAlbom15112-1751.03v1)
+Description: Full genome sequence for Drosophila albomicans as provided by NCBI and stored in Biostrings object
+Version: 1.0.0
+organism: Drosophila albomicans
+common_name: D. albomicans
+provider: NCBI
+genome: GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.fna.gz
+release_date: 2019/11/14
+source_url: https://www.ncbi.nlm.nih.gov/assembly/GCF_009650485.1
+organism_biocview: Drosophila_albomicans
+BSgenomeObjname: Dalbomicans
+circ_seqs: "NC_027937.1"
+SrcDataFiles: GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.fna.gz https://ftp.ncbi.nlm.nih.gov/genomes/refseq/invertebrate/Drosophila_albomicans/latest_assembly_versions/GCF_009650485.1_drosAlbom15112-1751.03v1/
+PkgExamples: genome[["NC_027937.1"]]
+seqs_srcdir: /home/radhika/atac/info-g
+seqfile_name: drosAlbom15112-1751.03v1.sorted.2bit
