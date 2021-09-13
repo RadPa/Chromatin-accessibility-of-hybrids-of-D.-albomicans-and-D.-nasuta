@@ -31,9 +31,9 @@ export.2bit(dna, "drosAlbom15112-1751.03v1.sorted.2bit")
 #Loading required library
 library(BSgenome) 
 
-seed_files <- ("/home/radhika/atac/info-g/")  
+seed_files <- ("BSgenome.Dalbomicans.NCBI.15112-seed")  
 tail(list.files(seed_files, pattern="-seed$"))  
-#[1] "BSgenome.Dalbomicans.dalb1-seed"  
+#[1] "BSgenome.Dalbomicans.NCBI.15112-seed"  
 
 dalbv1_seed <- list.files(seed_files, pattern="-seed$", full.names=TRUE)  
 cat(readLines(dalbv1_seed), sep="\n")  
