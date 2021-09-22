@@ -10,21 +10,19 @@ fo <- read.table("/home/radhika/atac/dacc/testes/shift/info.txt", header=T)
 colnames(at) <- c("Chr", "Start", "End", "AAT1", "AAT2","ANT1", "ANT2") #The sample names should be same between at and fo
 rownames(at) <- paste0(at$Chr, "/t", at$Start, "/t", at$End)
 rownames(fo) <- fo$Samples
-pander(head(at))
-pander(head(fo))
-
-#Filtering the rows with less than 10 reads
-at <- at[apply(at[,4:ncol(at)], 1, max) > 10,]
-pander(dim(at), "Data dimensions")
-cm <- at[,4:ncol(at)]
-pander(quantile(rowSums(cm)))
-pander(quantile(rowMeans(cm)))
-pander(quantile(apply(cm, 1, max)))
 
 #Normalizing the counts
 counts <- at[,4:ncol(at)]
 dds <- DESeqDataSetFromMatrix(countData = counts[,order(colnames(counts))], colData = fo, design = ~ Species)
 dds <- DESeq(dds)
+
+#Differential Peak calling
+res <- results(dds, lfcThreshold=0, contrast=c("Species", "Dalbomicans", "Dnasuta"))
+print(summary(res))
+
+#Reporting Results 
+write.table(as.data.frame(res), 
+          file="nfr.tes.des.txt",sep="\t")
 
 # Annotating peak regions
 library(GenomicFeatures)
@@ -35,16 +33,7 @@ peakAnno <- annotatePeak(gr, tssRegion=c(-1000, 1000), TxDb=txdb_alb)
 png("peakanno.png")
 plotAnnoPie(peakAnno)
 dev.off()
-
-#Differential Peak calling
-dds <- DESeq(dds)
-res <- results(dds, lfcThreshold=0, contrast=c("Species", "Dalbomicans", "Dnasuta"))
-print(summary(res))
-
-#Writing the results 
-write.table(as.data.frame(res), 
-          file="nfr.tes.des.txt",sep="\t")
-          
+        
 #Data visualization
 cm <- data.frame(counts(dds, normalized=TRUE))
 lf <- melt(cm, id.vars=c())
@@ -93,7 +82,7 @@ dev.off()
 library(apeglm)
 library(ashr)
 
-resLFC <- lfcShrink(dds, coef="Species_Dalbomicans_vs_Dnasuta", type="apeglm") #coef=2
+resLFC <- lfcShrink(dds, coef=2, type="apeglm")
 resNorm <- lfcShrink(dds, coef=2, type="normal")
 resAsh <- lfcShrink(dds, coef=2, type="ashr")
 jpeg("lfcshrink.jpeg")
