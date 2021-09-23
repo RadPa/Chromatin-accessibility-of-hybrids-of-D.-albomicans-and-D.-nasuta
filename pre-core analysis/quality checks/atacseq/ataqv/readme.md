@@ -8,6 +8,10 @@
 3. peak files
 4. TSS files for TSS enrichment scores
 
+```
+awk -v OFS="\t" '$3=="five_prime_UTR" {print}' GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.agat.sort.gff|awk -v OFS="\t" -F";" '{print $1,$2}'| cut -f 1,4,5,7 > dalb.utr-tss.bed 
+```
+
 ### Contents
 1. genome size in **.bed** format
 2. peak files in **.gappedPeak** format
