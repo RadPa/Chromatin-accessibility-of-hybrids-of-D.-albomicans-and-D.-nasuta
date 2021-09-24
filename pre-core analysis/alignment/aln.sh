@@ -1,6 +1,6 @@
 #!/bin/bash
 #Z840 workstation
-cd /home/radhika/atac/par
+cd /home/radhika/atac/aln/testes/
 
 #### Bowtie version 2.4.2 ####
 ##  Genome indexing ##
