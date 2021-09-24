@@ -28,23 +28,13 @@ echo samtools "$k"
 /home/radhika/samtools-1.11/samtools index "$k".sbam
 /home/radhika/samtools-1.11/samtools flagstat "$k".sbam > "$k".sbam.stat 
 
-echo removing mito and filtering reads
 ##Filtering .bam##
-
-#Removing mitochondrial reads, albomicans mitochondria NC_027937.1 and filtering for properly paired reads#
-/home/radhika/samtools-1.11/samtools idxstats "$k".sbam| cut -f 1 | grep -v NC_027937.1 | xargs /home/radhika/samtools-1.11/samtools view -b -f 3 "$k".sbam|/home/radhika/samtools-1.11/samtools sort -o "$k".ft.bam 
-/home/radhika/samtools-1.11/samtools index "$k".ft.bam\
-
-echo removing duplicates
-##removing duplicates-picardtools## 
-/home/radhika/gatk-4.1.9.0/./gatk MarkDuplicates -I "$k".ft.bam -O "$k".ftd.bam -M "$k".dupmatr.txt -REMOVE_DUPLICATES true 
-/home/radhika/samtools-1.11/samtools sort "$k".ftd.bam -o "$k".filtered.bam
-/home/radhika/samtools-1.11/samtools index "$k".filtered.bam
-/home/radhika/samtools-1.11/samtools flagstat "$k".filtered.bam > "$k".filtered.stat
-
-##fragment length distribution##  
-echo picard "$k"
-/home/radhika/gatk-4.1.9.0/./gatk CollectInsertSizeMetrics -I "$k".filtered.bam -O "$k".is_metrics.txt -H "$k".is_histogram.pdf -M 0.5 
+echo marking duplicates
+##Duplicates marked by picardtools## 
+/home/radhika/gatk-4.1.9.0/./gatk MarkDuplicates -I "$k".sbam -O "$k".dup.bam -M "$k".dupmatr.txt -REMOVE_DUPLICATES false 
+/home/radhika/samtools-1.11/samtools sort "$k".dup.bam -o "$k".sdup.bam
+/home/radhika/samtools-1.11/samtools index "$k".sdup.bam
+/home/radhika/samtools-1.11/samtools flagstat "$k".sdup.bam > "$k".sdup.stat
 
 echo "$k" done
 done
