@@ -1,6 +1,6 @@
 ### ATACseqQC
 
-Quickly assess the quality of ATAC-seq data, `Bioconductor version: Release (3.13), R (version "4.1.0")`
+Quickly assess the quality of ATAC-seq data, `Bioconductor version: Release (3.13), R (version "4.1.1")`
 
 ## Requirement
 1. Aligned reads
