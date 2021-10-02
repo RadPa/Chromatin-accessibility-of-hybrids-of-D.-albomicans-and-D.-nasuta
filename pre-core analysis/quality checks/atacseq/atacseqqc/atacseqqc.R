@@ -3,16 +3,14 @@
 #Custom libraries
 #txdb_alb <- loadDb("/home/radhika/atac/info-g/txdb_alb.sqlite")
 #library(BSgenome.Dalbomicans.dalbv1)
-#18.1 hrs for aat1#
-#16.2 hrs for aat2#
 
 library(ATACseqQC)
 setwd("/home/radhika/atac/unfiltered/")
 
 
 message ("loading ant2 bams")
-bamfile <- ("/home/radhika/atac/unfiltered/ANT2.sbam") 
-bamfile.labels <- gsub(".sbam", "", basename(bamfile))  
+bamfile <- ("/home/radhika/atac/unfiltered/AAT1.sdup.bam") 
+bamfile.labels <- gsub(".sdup.bam", "", basename(bamfile))  
 
 message ("library complexity")
 #Estimating library complexity
@@ -41,20 +39,6 @@ bamTop100 <- scanBam(BamFile(bamfile, yieldSize = 100),
 tags <- names(bamTop100)[lengths(bamTop100)>0]
 tags
        
-#before custom txdb and bsgenome, you might need if there's no packages for your genome
-#info <- read.table("/home/radhika/atac/unfiltered/dalb.seqinfo.txt")
-#seqinfo <- GRanges(seqnames=info[,1],
- 		#ranges=IRanges(start=info[,2],
- 				#end=info[,3]))
-#seqlev <- "chr1" ## subsample data for quick run
-#tr <- read.table("/home/radhika/atac/unfiltered/dalb_transcripts.txt")
-#trx <- GRanges(seqnames=tr[,1],
- 		#ranges=IRanges(start=tr[,2],
- 				#end=tr[,3]),
- 		#strand=tr[,4],
- 		#tx_id=tr[,5],
- 		#tx_name=tr[,6])
-
 #load libraries
 message ("genome features")  
 library(GenomicFeatures)
@@ -196,39 +180,6 @@ axis(1, at=seq(0, 100, by=10)+1,
 abline(v=seq(0, 100, by=10)+1, lty=2, col="gray")                                 
 dev.off()
 
-#plot Footprints     
-#library(MotifDb)
-
-#CTCF <- query(MotifDb, c("CTCF"))
-#CTCF <- as.list(CTCF)
-#print(CTCF[[1]], digits=2)
-#Refseq not supported          
-#ubx <- query(MotifDb, 'FBgn0003944')
-#ubx <- as.list(ubx)
-#print(ubx[[1]], digits=2)
-#Refseq not supported 
-#sigs <- factorFootprints(shiftedBamfile, pfm=ubx[[1]], 
-                         #genome=genome, 
-                         #min.score="90%", seqlev=seqlev,
-                         #upstream=100, downstream=100)   
-#Refseq not supported 
-#featureAlignedHeatmap(sigs$signal, 
-                      #feature.gr=reCenterPeaks(sigs$bindingSites,
-                                               #width=200+width(sigs$bindingSites[1])), 
-                      #annoMcols="score",
-                      #sortBy="score",
-                      #n.tile=ncol(sigs$signal[[1]]))
-#sigs$spearman.correlation
-#sigs$Profile.segmentation
-#Refseq not supported 
-#Plot
-#Refseq not supported
-#vp <- vPlot(shiftedBamfile, pfm=ubx[[1]], 
-            #genome=genome, min.score="90%", seqlev=seqlev,
-            #upstream=200, downstream=200, 
-            #ylim=c(30, 250), bandwidth=c(2, 1))
-
-#distanceDyad(vp, pch=20, cex=.5)    
 message("done")
-q("no")
+q("yes")
                              
