@@ -8,18 +8,18 @@ library(ATACseqQC)
 setwd("/home/radhika/atac/unfiltered/")
 
 
-message ("loading ant2 bams")
+message ("loading aat1 bams")
 bamfile <- ("/home/radhika/atac/unfiltered/AAT1.sdup.bam") 
 bamfile.labels <- gsub(".sdup.bam", "", basename(bamfile))  
 
 message ("library complexity")
 #Estimating library complexity
-png("ant2.lib.png")
+png("aat1.lib.png")
 estimateLibComplexity(readsDupFreq(bamfile))
 dev.off()
 
 #Fragment size
-png("ant2.fz.png")
+png("aat1.fz.png")
 fragSize <- fragSizeDist(bamfile, bamfile.labels)
 dev.off()
 
@@ -61,14 +61,14 @@ gal1 <- shiftGAlignmentsList(gal, outbam=shiftedBamfile)
 message ("scoring")
 #PT scrore
 pt <- PTscore(gal1, txs)
-png("pts.ant2.png")
+png("pts.aat1.png")
 plot(pt$log2meanCoverage, pt$PT_score, 
      xlab="log2 mean coverage",
      ylab="Promoter vs Transcript")
 dev.off()
 #NFR regions
 nfr <- NFRscore(gal1, txs)
-png("nfr.ant2.png")
+png("nfr.aat1.png")
 plot(nfr$log2meanCoverage, nfr$NFR_score, 
      xlab="log2 mean coverage",
      ylab="Nucleosome Free Regions score",
@@ -80,16 +80,12 @@ dev.off()
 tsse <- TSSEscore(gal1, txs)
 message("TSS")
 tsse$TSSEscore
-png("tss.ant2.png")
+png("tss.aat1.png")
 plot(100*(-9:10-.5), tsse$values, type="b", 
      xlab="distance to TSS",
      ylab="aggregate TSS score")
 dev.off()     
 
-#Shift and split at one step
-#doesnot work for refseq seq names
-#objs <- splitBam(ant2, tags=tags, "/home/radhika/atac/unfiltered/",
-                 #txs=txs, genome=genome)
 message ("splitting bams")                
 #Split reads
 objs <- splitGAlignmentsByCut(gal1,
@@ -104,34 +100,34 @@ bamfiles <- file.path("/home/radhika/atac/unfiltered/",
                      "mononucleosome.bam",
                      "dinucleosome.bam",
                      "trinucleosome.bam"))  
-png("ant2-x.png")
+png("aat1-x.png")
 cumulativePercentage(bamfiles[1:2], as(seqinformation["NC_047627.1"], "GRanges"))
 dev.off()
-png("ant2-2l.png")
+png("aat1-2l.png")
 cumulativePercentage(bamfiles[1:2], as(seqinformation["NC_047628.1"], "GRanges"))
 dev.off()
-png("ant2-3.png")
+png("aat1-3.png")
 cumulativePercentage(bamfiles[1:2], as(seqinformation["NC_047629.1"], "GRanges"))
 dev.off()
-png("ant2-4.png")
+png("aat1-4.png")
 cumulativePercentage(bamfiles[1:2], as(seqinformation["NC_047630.1"], "GRanges"))  
 dev.off()
-png("ant2-2r.png")                                        
+png("aat1-2r.png")                                        
 cumulativePercentage(bamfiles[1:2], as(seqinformation["NC_047631.1"], "GRanges"))
 dev.off()
-png("ant2-s38.png")
+png("aat1-s38.png")
 cumulativePercentage(bamfiles[1:2], as(seqinformation["NW_022995738.1"], "GRanges"))
 dev.off()
-png("ant2-s39.png")
+png("aat1-s39.png")
 cumulativePercentage(bamfiles[1:2], as(seqinformation["NW_022995739.1"], "GRanges"))
 dev.off()
-png("ant2-s40.png")
+png("aat1-s40.png")
 cumulativePercentage(bamfiles[1:2], as(seqinformation["NW_022995740.1"], "GRanges"))
 dev.off()
-png("ant2-s41.png")
+png("aat1-s41.png")
 cumulativePercentage(bamfiles[1:2], as(seqinformation["NW_022995741.1"], "GRanges"))
 dev.off()
-png("ant2-s42.png")
+png("aat1-s42.png")
 cumulativePercentage(bamfiles[1:2], as(seqinformation["NW_022995742.1"], "GRanges"))
 dev.off()
 
@@ -156,7 +152,7 @@ sigs <- enrichedFragments(gal=objs[c("NucleosomeFree", "mononucleosome", "dinucl
 ## log2 transformed signals
 sigs.log2 <- lapply(sigs, function(.ele) log2(.ele+1))
 #plot heatmap
-png("heatmap.ant2.png")
+png("heatmap.aat1.png")
 featureAlignedHeatmap(sigs.log2, reCenterPeaks(TSS, width=ups+dws),
                       zeroAt=.5, n.tile=NTILE)
 dev.off()
@@ -171,7 +167,7 @@ message("rescale")
 ## rescale the nucleosome-free and nucleosome signals to 0~1
 range01 <- function(x){(x-min(x))/(max(x)-min(x))}
 out <- apply(out, 2, range01)
-png("nfns.ant2.png")
+png("nfns.aat1.png")
 matplot(out, type="l", xaxt="n", 
         xlab="Position (bp)", 
         ylab="Fraction of signal")
@@ -182,4 +178,3 @@ dev.off()
 
 message("done")
 q("yes")
-                             
