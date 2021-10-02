@@ -48,7 +48,8 @@ txdb_alb <- loadDb("/home/radhika/atac/info-g/txdb_alb.sqlite")
 #Genome information
 genome <- Dalbomicans
 seqinformation <- seqinfo(txdb_alb) 				
-seqlev <- c("NC_047627.1", "NC_047628.1", "NC_047629.1", "NC_047630.1", "NC_047631.1", "NW_022995738.1", "NW_022995739.1", "NW_022995740.1", "NW_022995741.1", "NW_022995742.1", "NC_027937.1")
+seqlev <- c("NC_047627.1", "NC_047628.1", "NC_047629.1", "NC_047630.1", "NC_047631.1", "NW_022995738.1", 
+	    "NW_022995739.1", "NW_022995740.1", "NW_022995741.1", "NW_022995742.1", "NC_027937.1")
 which <- as(seqinformation[seqlev], "GRanges")
 txs <- transcripts(txdb_alb)
 
