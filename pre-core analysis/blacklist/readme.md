@@ -24,6 +24,4 @@ After mappability folder generation
 
 check the **blacklist.sh** for the script
 
-After installation keep the input (unfiltered bam) and mappability folder executable Blacklist in the same folder. We have generated blacklist using ATAC-seq unfiltered bam and species specific.
-
-Once the blacklist.bed was created for each chromosome, cat them and the Blacklist of the geome is ready
+After installation keep the input and mappability folder executable Blacklist in the same folder. We have generated blacklist using ATAC-seq unfiltered bam and species specific.
