@@ -2,7 +2,7 @@
 
 Blacklisting the regions of the genome is a **two step process**
   1. Create Mappability folder
-  2. Input files (unfiltered bam)
+  2. Input files (aligned reads)
   
 ## Mappability
 
