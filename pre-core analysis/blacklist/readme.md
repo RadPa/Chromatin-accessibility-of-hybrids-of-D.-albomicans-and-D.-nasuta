@@ -20,7 +20,7 @@ check **blacklist.sh**
 ## Blacklisting 
 After mappability folder generation
 
-```git clone --recurse-submodules https://github.com/Boyle-Lab/Blacklist.git\``` 
+```git clone --recurse-submodules https://github.com/Boyle-Lab/Blacklist.git``` 
 
 check the **blacklist.sh** for the script
 
