@@ -3,7 +3,7 @@
 ####Peak scoreing by HMMRATAC_V1.2.10
 #samtools faidx GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.fna
 #cut -f 1-2 GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.fna.fai > alb-chr.size
-#To remove mito from .bam#/home/radhika/samtools-1.11/samtools idxstats AAT1_ctad.sdup.bam| cut -f 1 | grep -v AC_027937 | xargs /home/radhika/samtools-1.11/samtools view -b AAT1_ctad.sdup.bam > AAT1.filtered.bam#
+#To remove mito from .bam#/home/radhika/samtools-1.11/samtools idxstats AAT1_ctad.sdup.bam| cut -f 1 | grep -v NC_027937 | xargs /home/radhika/samtools-1.11/samtools view -b AAT1_ctad.sdup.bam > AAT1.filtered.bam#
 
 #!/bin/bash
 #92 hrs in Z840#
