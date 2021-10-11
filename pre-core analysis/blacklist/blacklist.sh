@@ -65,12 +65,14 @@ python /home/radhika/py2-env/lib/python2.7/site-packages/umap-1.1.1-py2.7.egg/um
 done
 #This will create the mappability folder
 
-####Calling Blacklist regions of the genome####
-#With the mappability folder and input files (unfiltered .bam) folder in the same directory
+####Calling Blacklist regions for the small genome####
+#With the mappability folder and input files (dupmark.bam) folder in the same directory
+#
 for i in NC_047627.1 NC_047628.1 NC_047629.1 NC_047630.1 NC_047631.1 NW_022995738.1 NW_022995739.1 NW_022995740.1 NW_022995741.1 NW_022995742.1
 do
 ../Blacklist "$i" > "$i".bed
 done
 
 #Concatenating bed for Blacklisting the region of geome
-cat NC_047627.1.bed NC_047628.1.bed NC_047629.1.bed NC_047630.1.bed NC_047631.1.bed NW_022995738.1.bed NW_022995739.1.bed NW_022995740.1.bed NW_022995741.1.bed NW_022995742.1.bed > Blacklist.bed
+cat *.bed > Dalb-at.sm.v1.blacklist.bed
+cat *.bed > Dnas-at.sm.v1.blacklist.bed
