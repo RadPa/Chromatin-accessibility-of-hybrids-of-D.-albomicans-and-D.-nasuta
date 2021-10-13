@@ -24,4 +24,4 @@ After mappability folder generation
 
 check the **blacklist.sh** for the script
 
-After installation, keep the input and mappability folder in the same path as executable Blacklist. We have generated blacklist using ATAC-seq data of _D. albomicans_ and _D. nasuta_.
+After installation, keep the input and mappability folder in the same path as executable Blacklist and generated blacklist using ATAC-seq data.
