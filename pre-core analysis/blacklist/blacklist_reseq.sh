@@ -149,6 +149,7 @@ do
 done
 cat both_nine_*.bed > both_nine_blk.bed
 
+mv *.bed both/
 mv input/*.bam .
 
 mkdir merged
@@ -185,6 +186,11 @@ do
 mv $i dalb_"$i"
 done
 
+cd ../
+cp Dalb/*.bed .
+cp dnas/*.bed .
+cp both/*.bed .
+cp merged/*.bed .
 
 for i in *_NC_047627.1.bed
 do
