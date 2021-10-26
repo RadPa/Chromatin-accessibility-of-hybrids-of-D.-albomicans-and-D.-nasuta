@@ -96,7 +96,3 @@ dev.off()
 jpeg("maLFC.jpeg")
 plotMA(resLFC, ylim=c(-2,2))
 dev.off()
-
-#Writing results
-write.table(as.data.frame(res), 
-          file="nfr.sh.des.txt",sep="\t")
