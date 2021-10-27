@@ -19,5 +19,5 @@ awk -v OFS="\t" '{print $1}' tes.nfr.x7.sh.d.txt |sed -e '1d' -e 's/"//g' -e 's/
 ```
 
 ### JASPAR invertebrate pfms 
-http://jaspar.genereg.net/temp/20211027140730_JASPAR2022_combined_matrices_5480_jaspar.txt
-https://jaspar.genereg.net/download/data/2022/CORE/JASPAR2022_CORE_insects_non-redundant_pfms_jaspar.txt
+1. http://jaspar.genereg.net/temp/20211027140730_JASPAR2022_combined_matrices_5480_jaspar.txt
+2. https://jaspar.genereg.net/download/data/2022/CORE/JASPAR2022_CORE_insects_non-redundant_pfms_jaspar.txt
