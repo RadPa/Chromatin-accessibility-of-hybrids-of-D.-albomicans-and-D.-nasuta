@@ -1,14 +1,16 @@
-#Packages needed for this excercise
+#Packages needed for this exercise
+
 library(DESeq2)
 library(ggplot2)
 library(reshape2)
-library(pander)
 
 #Importing count data
-at <- read.table("/home/radhika/atac/dacc/testes/shift/tes.sh.nfr.count", header=F)
-fo <- read.table("/home/radhika/atac/dacc/testes/shift/info.txt", header=T)
-colnames(at) <- c("Chr", "Start", "End", "AAT1", "AAT2","ANT1", "ANT2") #The sample names should be same between at and fo
-rownames(at) <- paste0(at$Chr, "/t", at$Start, "/t", at$End)
+
+#at <- read.table("/home/radhika/atac/dacc/all.nfr.counts", header=F)
+at <- read.table("tes.nfr.x7.sh.fcount", header=F)
+fo <- read.table("info.txt", header=T)
+colnames(at) <- c("Chr", "Start", "End", "AAT1", "AAT2","ANT1", "ANT2") 
+rownames(at) <- paste0(at$Chr, ":", at$Start, "-", at$End)
 rownames(fo) <- fo$Samples
 
 #Normalizing the counts
@@ -22,7 +24,7 @@ print(summary(res))
 
 #Reporting Results 
 write.table(as.data.frame(res), 
-          file="nfr.tes.des.txt",sep="\t")
+          file="tes.nfr.x7.sh.d.txt",sep="\t")
 
 # Annotating peak regions
 library(GenomicFeatures)
