@@ -2,7 +2,8 @@
 ## Input files
  1. Merged reads
  2. merged peaks
- 3. JASPAR invertebrate pfms
+ 3. Blacklist
+ 4. JASPAR invertebrate pfms
 
 ### Merged reads
 Replicates were merged
