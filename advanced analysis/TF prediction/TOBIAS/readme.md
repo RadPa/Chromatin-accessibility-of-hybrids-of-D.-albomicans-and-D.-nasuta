@@ -1,9 +1,11 @@
 # TOBIAS
+
 ## Input files
- 1. Merged reads
- 2. merged peaks
+ 1. Genome fasta
+ 2. Merged reads
  3. Blacklist
- 4. JASPAR invertebrate pfms
+ 4. merged peaks
+ 5. JASPAR invertebrate pfms
 
 ### Merged reads
 Replicates were merged
