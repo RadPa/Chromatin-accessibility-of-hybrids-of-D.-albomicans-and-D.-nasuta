@@ -2,6 +2,7 @@
 Contains the figures and the scripts used 
 1. Figure 1B
 2. Figure 2
+3. Supplementary Figure 2
 
 ## Scripts
 1. Fig1.R
