@@ -4,7 +4,7 @@ library(circlize)
 #Files needed
 inf <- read.table("chrom.info", colClasses = c("character", "numeric", "numeric"), sep = "\t")
 acc <- read.table("acc.tes.nfr.txt", colClasses = c("character", "numeric", "numeric"), sep = "\t")
-arm <- read.table("acc.tes.nfr.te.ann.txt", colClasses = c("character", "numeric", "numeric", "character"), sep = "\t")
+arm <- read.table("GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.v1.rm.bed", colClasses = c("character", "numeric", "numeric", "character"), sep = "\t")
 up <- read.table("up.qv.txt", colClasses = c("character", "numeric", "numeric", "numeric", "numeric"), sep = "\t")
 do <- read.table("do.qv.txt", colClasses = c("character", "numeric", "numeric", "numeric", "numeric"), sep = "\t")
 #Colnames
