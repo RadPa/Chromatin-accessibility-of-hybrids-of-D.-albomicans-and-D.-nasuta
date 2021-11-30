@@ -35,7 +35,7 @@ echo removing mito reads of "$k"
 
 # Removing Duplicates #
 echo marking duplicates of "$k"
-/home/morpheus/gatk-4.2.2.0/gatk MarkDuplicates -Xmx6g -I "$k".mtrm.bam -O "$k".mtdrm.bam -M "$k".mtdrm.txt -REMOVE_DUPLICATES True
+/home/morpheus/gatk-4.2.2.0/gatk MarkDuplicates -I "$k".mtrm.bam -O "$k".mtdrm.bam -M "$k".mtdrm.txt -REMOVE_DUPLICATES True
 /home/morpheus/radhika/samtools-1.14/samtools index -@ 32 "$k".mtdrm.bam
 /home/morpheus/radhika/samtools-1.14/samtools flagstat "$k".mtdrm.bam
 /home/morpheus/gatk-4.2.2.0/gatk CollectInsertSizeMetrics -I "$k".mtdrm.bam -O "$k".mtdrm.is_metrics.txt -H "$k".mtdrm.his.pdf -M 0.5
