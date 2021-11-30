@@ -15,7 +15,7 @@ k=`echo "$i" | sed 's/_ct_1.fastq.gz//g'`
 ## Mapping, format conversions and Stats ##
 # Mapping #
 echo mapping "$k"
-/home/morpheus/radhika/bowtie2-2.4.4-linux-x86_64/bowtie2 --very-sensitive --no-mixed --no-discordant -p 32 --seed 21 -x GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.fna -1 "$i" -2 "$j" |/home/morpheus/radhika/samtools-1.14/samtools view -@ 32 -bo "$k".bam
+/home/morpheus/radhika/bowtie2-2.4.4-linux-x86_64/bowtie2 -X 750 --very-sensitive --no-mixed --no-discordant -p 32 --seed 21 -x GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.fna -1 "$i" -2 "$j" |/home/morpheus/radhika/samtools-1.14/samtools view -@ 32 -bo "$k".bam
 
 # Tidying the data #
 echo tidying "$k"
