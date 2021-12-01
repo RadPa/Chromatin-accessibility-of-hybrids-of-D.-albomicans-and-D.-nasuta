@@ -4,9 +4,10 @@ ATAC-seq specific peak calling using HMMRATAC (Tarbell and Liu, 2019).
 
 ## Requirements
 1. `shifted.bam` from **ATACseqQC**
-2. **Mitochondrial reads** were removed from `shifted.bam`
-3. Genome size
-4. Blacklist
+2. **Mitochondrial reads** were removed before **ATACseqQC**
+3. **Duplicated reads** were removed before **ATACseqQC**, eventhough HMMRATAC removes the duplicated reads
+4. Genome size
+5. Blacklist
 
 ### Contents
 1. Size of genome
