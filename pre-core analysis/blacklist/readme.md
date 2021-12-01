@@ -1,5 +1,7 @@
 ## Generating Blacklist of the Genome
 
+<img align="right"  src="https://github.com/RadPa/ATAC-seq/blob/main/pre-core%20analysis/blacklist/flowchart-Blacklist.png" width="400" height="400">
+
 Blacklisting the regions of the genome is a **two step process**
   1. Create Mappability folder
   2. Input files (aligned reads)
