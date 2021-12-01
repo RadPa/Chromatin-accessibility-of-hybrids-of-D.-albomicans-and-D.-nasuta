@@ -1,7 +1,7 @@
 #!/bin/R
 
 #Custom libraries
-#txdb_alb <- loadDb("/home/radhika/atac/info-g/txdb_alb.sqlite")
+#txdb_alb <- loadDb("/home/morpheus/radhika/shft/txdb_alb.sqlite")
 #library(BSgenome.Dalbomicans.dalbv1)
 
 library(ATACseqQC)
