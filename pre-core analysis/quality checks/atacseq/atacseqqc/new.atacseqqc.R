@@ -108,7 +108,7 @@ tags
 
 message ("shifting aat1")  
 #shifting bam reads
-aat1.gal <- readBamFile(aat1.bamfile, tag=tags, which=which, asMates=TRUE, bigFile=TRUE)
+aat1.gal <- readBamFile(aat1.bamfile, tag=tags, which=which, asMates=TRUE, bigFile=TRUE, keepDuplicates=TRUE)
 aat1.shiftedBamfile <- file.path("/home/morpheus/radhika/shft", "aat1.shifted.bam")
 aat1.gal1 <- shiftGAlignmentsList(aat1.gal, outbam=aat1.shiftedBamfile)
 
@@ -122,7 +122,7 @@ tags
 
 message ("shifting aat2")  
 #shifting bam reads
-aat2.gal <- readBamFile(aat2.bamfile, tag=tags, which=which, asMates=TRUE, bigFile=TRUE)
+aat2.gal <- readBamFile(aat2.bamfile, tag=tags, which=which, asMates=TRUE, bigFile=TRUE, keepDuplicates=TRUE)
 aat2.shiftedBamfile <- file.path("/home/morpheus/radhika/shft", "aat2.shifted.bam")
 aat2.gal1 <- shiftGAlignmentsList(aat2.gal, outbam=aat2.shiftedBamfile)
 
@@ -136,7 +136,7 @@ tags
 
 message ("shifting ant1")  
 #shifting bam reads
-ant1.gal <- readBamFile(ant1.bamfile, tag=tags, which=which, asMates=TRUE, bigFile=TRUE)
+ant1.gal <- readBamFile(ant1.bamfile, tag=tags, which=which, asMates=TRUE, bigFile=TRUE, keepDuplicates=TRUE)
 ant1.shiftedBamfile <- file.path("/home/morpheus/radhika/shft", "ant1.shifted.bam")
 ant1.gal1 <- shiftGAlignmentsList(ant1.gal, outbam=ant1.shiftedBamfile)
 
@@ -150,7 +150,7 @@ tags
 
 message ("shifting ant2")  
 #shifting bam reads
-ant2.gal <- readBamFile(ant2.bamfile, tag=tags, which=which, asMates=TRUE, bigFile=TRUE)
+ant2.gal <- readBamFile(ant2.bamfile, tag=tags, which=which, asMates=TRUE, bigFile=TRUE, keepDuplicates=TRUE)
 ant2.shiftedBamfile <- file.path("/home/morpheus/radhika/shft", "ant2.shifted.bam")
 ant2.gal1 <- shiftGAlignmentsList(ant2.gal, outbam=ant2.shiftedBamfile)
 q("yes")
