@@ -1,3 +1,5 @@
+<img align="right"  src="https://github.com/RadPa/ATAC-seq/blob/main/core-analysis/flowchart-core.png" width="400" height="400">
+
 # Core-analysis
 
 ## Peak calling
