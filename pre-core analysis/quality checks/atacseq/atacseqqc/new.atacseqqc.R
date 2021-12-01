@@ -58,6 +58,17 @@ png("ant2.fz.png")
 fragSize <- fragSizeDist(ant2.bamfile, ant2.bamfile.labels)
 dev.off()
 
+#Shifting bam 
+#tag generation
+possibleTag <- list("integer"=c("AM", "AS", "CM", "CP", "FI", "H0", "H1", "H2",  
+                               "HI", "IH", "MQ", "NH", "NM", "OP", "PQ", "SM", 
+                               "TC", "UQ"),  
+                 "character"=c("BC", "BQ", "BZ", "CB", "CC", "CO", "CQ", "CR", 
+                               "CS", "CT", "CY", "E2", "FS", "LB", "MC", "MD", 
+                               "MI", "OA", "OC", "OQ", "OX", "PG", "PT", "PU", 
+                               "Q2", "QT", "QX", "R2", "RG", "RX", "SA", "TS", 
+                               "U2"))
+   
 message ("loading aat1 bams without dup")
 aat1.bamfile <- ("/home/morpheus/radhika/shft/AAT1.mtrm.bam") 
 aat1.bamfile.labels <- gsub(".mtdrm", "", basename(aat1.bamfile))  
@@ -74,17 +85,6 @@ message ("loading aat2 bams without dup")
 ant2.bamfile <- ("/home/morpheus/radhika/shft/ANT2.mtrm.bam") 
 ant2.bamfile.labels <- gsub(".mtdrm", "", basename(ant2.bamfile))
 
-#Shifting bam 
-#tag generation
-possibleTag <- list("integer"=c("AM", "AS", "CM", "CP", "FI", "H0", "H1", "H2",  
-                               "HI", "IH", "MQ", "NH", "NM", "OP", "PQ", "SM", 
-                               "TC", "UQ"),  
-                 "character"=c("BC", "BQ", "BZ", "CB", "CC", "CO", "CQ", "CR", 
-                               "CS", "CT", "CY", "E2", "FS", "LB", "MC", "MD", 
-                               "MI", "OA", "OC", "OQ", "OX", "PG", "PT", "PU", 
-                               "Q2", "QT", "QX", "R2", "RG", "RX", "SA", "TS", 
-                               "U2"))
-   
 #load libraries
 message ("genome features")  
 library(GenomicFeatures)
@@ -109,8 +109,8 @@ tags
 message ("shifting aat1")  
 #shifting bam reads
 aat1.gal <- readBamFile(aat1.bamfile, tag=tags, which=which, asMates=TRUE, bigFile=TRUE)
-aat1.d.shiftedBamfile <- file.path("/home/morpheus/radhika/shft", "aat1.d.shifted.bam")
-aat1.gal1 <- shiftGAlignmentsList(aat1.gal, outbam=aat1.d.shiftedBamfile)
+aat1.shiftedBamfile <- file.path("/home/morpheus/radhika/shft", "aat1.shifted.bam")
+aat1.gal1 <- shiftGAlignmentsList(aat1.gal, outbam=aat1.shiftedBamfile)
 
 message ("scanbam aat2")                               
 library(Rsamtools)
@@ -123,8 +123,8 @@ tags
 message ("shifting aat2")  
 #shifting bam reads
 aat2.gal <- readBamFile(aat2.bamfile, tag=tags, which=which, asMates=TRUE, bigFile=TRUE)
-aat2.d.shiftedBamfile <- file.path("/home/morpheus/radhika/shft", "aat2.d.shifted.bam")
-aat2.gal1 <- shiftGAlignmentsList(aat2.gal, outbam=aat2.d.shiftedBamfile)
+aat2.shiftedBamfile <- file.path("/home/morpheus/radhika/shft", "aat2.shifted.bam")
+aat2.gal1 <- shiftGAlignmentsList(aat2.gal, outbam=aat2.shiftedBamfile)
 
 message ("scanbam ant1")                               
 library(Rsamtools)
@@ -137,8 +137,8 @@ tags
 message ("shifting ant1")  
 #shifting bam reads
 ant1.gal <- readBamFile(ant1.bamfile, tag=tags, which=which, asMates=TRUE, bigFile=TRUE)
-ant1.d.shiftedBamfile <- file.path("/home/morpheus/radhika/shft", "ant1.d.shifted.bam")
-ant1.gal1 <- shiftGAlignmentsList(ant1.gal, outbam=ant1.d.shiftedBamfile)
+ant1.shiftedBamfile <- file.path("/home/morpheus/radhika/shft", "ant1.shifted.bam")
+ant1.gal1 <- shiftGAlignmentsList(ant1.gal, outbam=ant1.shiftedBamfile)
 
 message ("scanbam ant2")                               
 library(Rsamtools)
@@ -151,6 +151,6 @@ tags
 message ("shifting ant2")  
 #shifting bam reads
 ant2.gal <- readBamFile(ant2.bamfile, tag=tags, which=which, asMates=TRUE, bigFile=TRUE)
-ant2.d.shiftedBamfile <- file.path("/home/morpheus/radhika/shft", "ant2.d.shifted.bam")
-ant2.gal1 <- shiftGAlignmentsList(ant2.gal, outbam=ant2.d.shiftedBamfile)
+ant2.shiftedBamfile <- file.path("/home/morpheus/radhika/shft", "ant2.shifted.bam")
+ant2.gal1 <- shiftGAlignmentsList(ant2.gal, outbam=ant2.shiftedBamfile)
 q("yes")
