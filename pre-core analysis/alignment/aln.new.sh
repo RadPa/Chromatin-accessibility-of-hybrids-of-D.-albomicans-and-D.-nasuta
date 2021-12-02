@@ -23,7 +23,7 @@ echo tidying "$k"
 /home/morpheus/radhika/samtools-1.14/samtools index -@ 32 "$k".sbam
 /home/morpheus/radhika/samtools-1.14/samtools flagstat "$k".sbam
 /home/morpheus/radhika/samtools-1.14/samtools view -@ 32 -b -f 2 -F 524 "$k".sbam > "$k".ft.bam
-/home/morpheus/radhika/samtools-1.14/samtools index -@ 32"$k".ft.bam
+/home/morpheus/radhika/samtools-1.14/samtools index -@ 32 "$k".ft.bam
 /home/morpheus/radhika/samtools-1.14/samtools flagstat "$k".ft.bam
 
 ## Filtering data ##
