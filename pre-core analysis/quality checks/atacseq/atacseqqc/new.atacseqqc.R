@@ -70,19 +70,19 @@ possibleTag <- list("integer"=c("AM", "AS", "CM", "CP", "FI", "H0", "H1", "H2",
                                "U2"))
    
 message ("loading aat1 bams without dup")
-aat1.bamfile <- ("/home/morpheus/radhika/shft/AAT1.mtrm.bam") 
+aat1.bamfile <- ("/home/morpheus/radhika/shft/AAT1.mtdrm.bam") 
 aat1.bamfile.labels <- gsub(".mtdrm", "", basename(aat1.bamfile))  
 
 message ("loading aat2 bams without dup")
-aat2.bamfile <- ("/home/morpheus/radhika/shft/AAT2.mtrm.bam") 
+aat2.bamfile <- ("/home/morpheus/radhika/shft/AAT2.mtdrm.bam") 
 aat2.bamfile.labels <- gsub(".mtdrm", "", basename(aat2.bamfile))  
 
 message ("loading ant1 bams without dup")
-ant1.bamfile <- ("/home/morpheus/radhika/shft/ANT1.mtrm.bam") 
+ant1.bamfile <- ("/home/morpheus/radhika/shft/ANT1.mtdrm.bam") 
 ant1.bamfile.labels <- gsub(".mtdrm", "", basename(ant1.bamfile))  
 
 message ("loading aat2 bams without dup")
-ant2.bamfile <- ("/home/morpheus/radhika/shft/ANT2.mtrm.bam") 
+ant2.bamfile <- ("/home/morpheus/radhika/shft/ANT2.mtdrm.bam") 
 ant2.bamfile.labels <- gsub(".mtdrm", "", basename(ant2.bamfile))
 
 #load libraries
