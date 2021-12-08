@@ -9,6 +9,6 @@ Contains the figures and the scripts used
 2. Fig2.R
 
 ## Additional files
-1. In `.bed` format files
-2. chromosome info file
-3. DAC file
+1. In `.bed` format 
+2. chromosome info 
+3. DAC 
