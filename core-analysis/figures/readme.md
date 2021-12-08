@@ -1,6 +1,6 @@
 ## Figures
 Contains the figures and the scripts used 
-1. Figure 1B
+1. Figure 1
 2. Figure 2
 3. Supplementary Figure 2
 
@@ -8,5 +8,7 @@ Contains the figures and the scripts used
 1. Fig1.R
 2. Fig2.R
 
-## Other files
-
+## Additional files
+1. In `.bed` format files
+2. chromosome info file
+3. DAC file
