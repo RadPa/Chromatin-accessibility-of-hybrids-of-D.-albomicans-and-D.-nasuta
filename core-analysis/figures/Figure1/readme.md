@@ -1,5 +1,5 @@
 ## Figure 1B
-Describes the accessibility in testes across D. albomicans and D.nasuta 
+Describes the accessibility in testes across *D. albomicans* and *D.nasuta* 
 
 ### Contents
   1. Figure 1 shell script `Fig1.sh`
