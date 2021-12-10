@@ -19,7 +19,7 @@ res.x <- subset(res, col=="#cc0000ff")
 jpeg("vol.x.jpeg", height = 4, width = 4, units= 'in', res = 1200, pointsize = 12)
 par(cex.axis=0.8, cex.lab=1)
 plot(-log10(pvalue) ~ log2FoldChange, pch=20, col=col, cex= ifelse(padj<=0.1,len/10000,0.1), xlim= c(-2,2), ylim=c(0,7), res.x)
-#text(-log10(res.x$pvalue) ~ res.x$log2FoldChange, labels=res.x$lab, cex= 0.7, pos=3, offset = 0.5)
+text(-log10(res.x$pvalue) ~ res.x$log2FoldChange, labels=res.x$lab, cex= 0.7, pos=3, offset = 0.5)
 dev.off()
 
 res.2l <- subset(res, col=="#e25ed9ff")
