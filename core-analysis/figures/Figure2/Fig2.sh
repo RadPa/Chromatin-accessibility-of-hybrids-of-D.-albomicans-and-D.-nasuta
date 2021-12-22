@@ -1,7 +1,7 @@
 ##Finding genes in DACs##
 bedtools intersect -wb -a ../data/GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.agat.sort.gff -b nfr.tes.des.q.bed| awk '$3=="gene"'| awk -F";" '{print $1}' | awk -v OFS="\t" '{gsub(/ID=gene-/,"")} {print $1,$4,$5,$9}' > nfr.tes.des.q.int.bed
 
-#If there are more than one gene in an DAC#
+#If there are more than one gene per DAC#
 while read j
 do
 chr=`echo $j|awk '{print $1}'`
@@ -19,5 +19,5 @@ efetch -db gene -id "$line" -format gene_table
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 done
 
-#For labelling of points
+#For size of points
 sed -e '1d' -e 's/"//g' -e 's/:/\t/' -e 's/-/\t/' nfr.tes.des.txt| awk -v OFS="\t" '{print $3-$2}' > nfr.tes.des.len.bed
