@@ -1,5 +1,5 @@
 ## Supplementary Figure 2
-Describes the peak parameters used to select 
+Represents the number of ACs found in the models of HMMRATAC. 
 
 ### Contents
 1. Peaks `.txt`
