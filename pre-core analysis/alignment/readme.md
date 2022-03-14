@@ -17,5 +17,9 @@ Mitochondrial reads removed with `Samtools v1.14` as per the requirement of the 
 ## Fragment length distribution
 Aligned reads distribution with `gatk v4.2.2.0 CollectInsertSizeMetrics`
 
+## Number of bases in bam
+```
+/home/radhika/bedtools2/bin/bedtools genomecov -ibam bam -bga| awk '{s+=$4}END{print s}'
+```
 ### Contents
 
