@@ -1,0 +1,135 @@
+#!/usr/bin/env Rscript
+args = commandArgs(trailingOnly=TRUE)
+aa <- args[1]
+nn <- args[2]
+an <- args[3]
+
+a <- read.table(paste(aa,sep=""))
+ab  <- gsub(".50_50.fst.txt","",aa)
+x <- gsub(".50_50.fst.txt","",nn)
+y <- gsub(".50_50.fst.txt","",an)
+z <- paste(ab,x,y,sep="-")
+a[which(a$region=="NC_047627.1"),]-> chrx
+a[which(a$region=="NC_047628.1"),]-> chr2l
+a[which(a$region=="NC_047629.1"),]-> chr3
+a[which(a$region=="NC_047630.1"),]-> chr4
+a[which(a$region=="NC_047631.1"),]-> chr2r
+
+gs <- sum(max(chrx$chr),max(chr2l$chr),max(chr3$chr),max(chr4$chr),max(chr2r$chr))
+colcount=0
+pdf(paste(z,".mp.pdf",sep=""),height=20,width=30)
+par(mfrow=c(4,1))
+plot(chrx$chr,chrx$Nsites, pch=20, col="red",xlim=c(0,gs),ylim=c(0,1),main="D. albomicans (CHN vs TAI)",ylab="",xlab="",type="n",axes = FALSE,xaxt="n",font.lab=4,cex.main=3,cex.lab=2,font.main=4)
+points(chrx$chr,chrx$Nsites, pch=20, col="red",cex=2)
+
+colcount <- max(chrx$chr)
+rect(colcount,0,colcount+max(chr2l$chr),1, col=scales::alpha(rgb(col2rgb("black")[1,],col2rgb("black")[2,],col2rgb("black")[3,],max = 255), 0.25),border="transparent")
+points(colcount+chr2l$chr,chr2l$Nsites,pch=20, col="magenta",cex=2)
+
+colcount <- max(chrx$chr)+max(chr2l$chr)
+points(colcount+chr3$chr,chr3$Nsites, pch=20, col="greenyellow",cex=2)
+
+colcount <- max(chrx$chr)+max(chr2l$chr)+max(chr3$chr)
+rect(colcount,0,colcount+max(chr4$chr),1, col=scales::alpha(rgb(col2rgb("black")[1,],col2rgb("black")[2,],col2rgb("black")[3,],max = 255), 0.25),border="transparent")
+points(colcount+chr4$chr,chr4$Nsites, pch=20, col="orange",cex=2)
+
+colcount <- max(chrx$chr)+max(chr2l$chr)+max(chr3$chr)+max(chr4$chr)
+points(colcount+chr2r$chr,chr2r$Nsites, pch=20, col="blue",cex=2)
+abline(h=0.9,lty=2,col="red")
+
+axis(2, at=c(0,5,1), font.axis=4,cex.axis=2)
+
+a <- read.table(paste(nn,sep=""))
+ab  <- gsub(".50_50.fst.txt","",nn)
+a[which(a$region=="NC_047627.1"),]-> chrx
+a[which(a$region=="NC_047628.1"),]-> chr2l
+a[which(a$region=="NC_047629.1"),]-> chr3
+a[which(a$region=="NC_047630.1"),]-> chr4
+a[which(a$region=="NC_047631.1"),]-> chr2r
+
+colcount=0
+
+plot(chrx$chr,chrx$Nsites, pch=20, col="red",xlim=c(0,gs),ylim=c(0,1),main="D. nasuta (IND vs KEN)",ylab="",xlab="",type="n",axes = FALSE,xaxt="n",font.lab=4,cex.main=3,cex.lab=2,font.main=4)
+points(chrx$chr,chrx$Nsites, pch=20, col="red",cex=2)
+
+colcount <- max(chrx$chr)
+rect(colcount,0,colcount+max(chr2l$chr),1, col=scales::alpha(rgb(col2rgb("black")[1,],col2rgb("black")[2,],col2rgb("black")[3,],max = 255), 0.25),border="transparent")
+points(colcount+chr2l$chr,chr2l$Nsites,pch=20, col="magenta",cex=2)
+
+colcount <- max(chrx$chr)+max(chr2l$chr)
+points(colcount+chr3$chr,chr3$Nsites, pch=20, col="greenyellow",cex=2)
+
+colcount <- max(chrx$chr)+max(chr2l$chr)+max(chr3$chr)
+rect(colcount,0,colcount+max(chr4$chr),1, col=scales::alpha(rgb(col2rgb("black")[1,],col2rgb("black")[2,],col2rgb("black")[3,],max = 255), 0.25),border="transparent")
+points(colcount+chr4$chr,chr4$Nsites, pch=20, col="orange",cex=2)
+
+colcount <- max(chrx$chr)+max(chr2l$chr)+max(chr3$chr)+max(chr4$chr)
+points(colcount+chr2r$chr,chr2r$Nsites, pch=20, col="blue",cex=2)
+abline(h=0.9,lty=2,col="red")
+
+axis(2, at=c(0,5,1), font.axis=4,cex.axis=2)
+mtext("FST",side=2, cex=3, font=4)
+
+a <- read.table(paste(an,sep=""))
+ab  <- gsub(".50_50.fst.txt","",an)
+a[which(a$region=="NC_047627.1"),]-> chrx
+a[which(a$region=="NC_047628.1"),]-> chr2l
+a[which(a$region=="NC_047629.1"),]-> chr3
+a[which(a$region=="NC_047630.1"),]-> chr4
+a[which(a$region=="NC_047631.1"),]-> chr2r
+
+colcount=0
+
+plot(chrx$chr,chrx$Nsites, pch=20, col="red",xlim=c(0,gs),ylim=c(0,1),main="D. albomicans (IND) vs D. nasuta (IND)",ylab="",xlab="",type="n",axes = FALSE,xaxt="n",font.lab=4,cex.main=3,cex.lab=2,font.main=4)
+points(chrx$chr,chrx$Nsites, pch=20, col="red",cex=2)
+
+colcount <- max(chrx$chr)
+rect(colcount,0,colcount+max(chr2l$chr),1, col=scales::alpha(rgb(col2rgb("black")[1,],col2rgb("black")[2,],col2rgb("black")[3,],max = 255), 0.25),border="transparent")
+points(colcount+chr2l$chr,chr2l$Nsites,pch=20, col="magenta",cex=2)
+
+colcount <- max(chrx$chr)+max(chr2l$chr)
+points(colcount+chr3$chr,chr3$Nsites, pch=20, col="greenyellow",cex=2)
+
+colcount <- max(chrx$chr)+max(chr2l$chr)+max(chr3$chr)
+rect(colcount,0,colcount+max(chr4$chr),1, col=scales::alpha(rgb(col2rgb("black")[1,],col2rgb("black")[2,],col2rgb("black")[3,],max = 255), 0.25),border="transparent")
+points(colcount+chr4$chr,chr4$Nsites, pch=20, col="orange",cex=2)
+
+colcount <- max(chrx$chr)+max(chr2l$chr)+max(chr3$chr)+max(chr4$chr)
+points(colcount+chr2r$chr,chr2r$Nsites, pch=20, col="blue",cex=2)
+abline(h=0.9,lty=2,col="red")
+
+axis(2, at=c(0,5,1), font.axis=4,cex.axis=2)
+
+mtext(c("ChrX","Chr2L","Chr3","Chr4","Chr2R"), side=1, at = c(16687500,48737500,91862500,121537500,139537500),font=4,cex=2,line=1)
+
+mtext("Chromosome",side=1, cex=3, font=4, line=3)
+
+par(mar = c(6, 9, 4, 8))
+c <- read.table("~/reseq/thetas/ALB_IND_theta.50_50.gz.pestPG")
+b <- read.table("/home/morpheus/atac/input/circos/deseq2_qval_sig.txt")
+a <- read.table("~/reseq/thetas/NAS_IND_theta.50_50.gz.pestPG")
+a[which(a$V2=="NC_047630.1"),]-> chr4
+b[which(b$V1=="chr4"),]-> Chr4
+b[which(b$padj<=0.1),]->B
+
+plot(chr4$V3,chr4$V4/chr4$V14,type="l",axes=FALSE,ylab="",main="Chr4 Waterson's Theta and differential accessible regions",xlab="Genomic co-ordinates",font.lab=2,cex.lab=3,cex.main=3)
+axis(1,col="black",las=1,cex.lab=1.5,font.lab=2,cex.axis=2,font.axis=2)
+axis(2,col="black",las=1,cex.lab=1.5,font.lab=2,cex.axis=2,font.axis=2)
+mtext("Theta (tW)",side=2,line=6,cex=2,font=2)
+c[which(c$V2=="NC_047630.1"),]-> chr4
+lines(chr4$V3,chr4$V4/chr4$V14,type="l",col="blue")
+legend("topleft", legend=c("D. albomicans (IND)","D. nasuta (IND)"), col=c("blue","black"),text.font=4,cex=1.5)
+box()
+par(new=TRUE)
+(Chr4$V3+Chr4$V2)/2 -> Chr4$V5
+Chr4$V3-Chr4$V2 -> Chr4$V6
+plot(Chr4$V5,Chr4$V4,pch=20,cex=log10(Chr4$V6),col="red",axes="FALSE",xlab="",ylab="",font.lab=2,cex.lab=2,cex.main=2)
+axis(4,col="red",las=1,cex.lab=2,font.lab=2,cex.axis=2,font.axis=2,col.axis="red")
+mtext("-log10FC",side=4,line=6,cex=2,font=2,col="red")
+
+dev.off()
+
+strsplit(ab,"[.]")[[1]][1]
+strsplit(ab,"[.]")[[1]][2]
+
+
