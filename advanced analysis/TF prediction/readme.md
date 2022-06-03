@@ -11,7 +11,7 @@ Requirements
 
 ### Annotation of peaks
 ```
-uropa -b tes.nfr.sh.mbed -g ../../info-g/GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.agat.sort.gtf --show_attributes GeneID Name --feature_anchor start --distance 2000 1000 --feature gene -p tes.nfr.sh.ann
+uropa -b tes.nfr.sh.mbed -g ../../info-g/GCF_009650485.1_drosAlbom15112-1751.03v1_genomic.agat.sort.gtf --show_attributes GeneID Name --feature_anchor start --distance 2000 1000 --feature gene -p tes.nfr.sh.ann.bed
 ```
 
 ### JASPAR invertebrate pfms 
