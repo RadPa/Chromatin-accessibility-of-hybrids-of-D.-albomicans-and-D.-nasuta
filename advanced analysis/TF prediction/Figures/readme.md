@@ -2,7 +2,7 @@
 
 ### Figure 4A
 
-Heatmap of TF activity score across two species, the scores were transformed into Zscore
+Heatmap of TF activity score across two hybrids, the scores were transformed into Zscore
 
 ```
 sed '1d' j22_results.txt| cut -f 2,6,8 > d.ind.score.txt
