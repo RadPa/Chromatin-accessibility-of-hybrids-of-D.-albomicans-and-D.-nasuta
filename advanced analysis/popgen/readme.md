@@ -1,1 +1,1 @@
-Population genetics of Drosophila nasuta and albomicans.
+Population genetics of *D. albomicans* and *D. nasuta*.
